@@ -1,0 +1,334 @@
+{
+  "generator-cedrus-api": {
+    "haveConfigFile": true,
+    "discover": {
+      "ask": false,
+      "apiConsumes": [
+        "application/json"
+      ],
+      "apiProduces": [
+        "application/json"
+      ]
+    },
+    "detail": {
+      "ask": false,
+      "isPublic": true,
+      "httpMethods": [
+        "get",
+        "put",
+        "post",
+        "patch",
+        "delete"
+      ],
+      "httpStatusCodes": [
+        "204",
+        "404",
+        "500"
+      ],
+      "versioning": {
+        "enabled": false,
+        "type": "uri",
+        "versionNumber": [
+          "v1"
+        ],
+        "uriOrder": "resourceFirst",
+        "contentTypeOrder": "applicationFirst",
+        "customHeaderName": "version"
+      },
+      "apiData": {
+        "returnDataType": "No"
+      },
+      "records": {
+        "limit": 10
+      },
+      "cache": {
+        "RedisEnable": false,
+        "RedisHost": "pub-redis-19334.dal-05.1.sl.garantiadata.com",
+        "RedisPort": "19334",
+        "RedisPassword": "zKvyYzznhsdvYwgq",
+        "RedisExpire": 180
+      },
+      "pagination": {
+        "PaginationEnable": true
+      },
+      "filter": {
+        "FilterEnable": false
+      },
+      "unitTesting": {
+        "UnitTestingEnable": true,
+        "testingTypes": [
+          "unitTesting",
+          "pactTesting"
+        ]
+      },
+      "security": {
+        "enabled": false,
+        "type": "none"
+      },
+      "logging": {
+        "enabled": false
+      }
+    },
+    "deploy": {
+      "ask": false,
+      "apiApplicationType": "java",
+      "openWhisk": {
+        "OpenWhiskEnable": false
+      },
+      "tls": {
+        "TLSEnable": false
+      },
+      "cloudFoundry": {
+        "appName": "",
+        "appMemory": "",
+        "revisionName": "R1"
+      },
+      "docker": {
+        "cwd": "TempSystem/cedrus23012019073503/pregaragedemo/saeid/R1",
+        "publicIP": "localhost",
+        "revisionName": "R1"
+      },
+      "javaOptions": {
+        "basePackage": "saeid.com",
+        "packagingType": "war",
+        "dependencyManagementType": "maven",
+        "framework": [
+          "spring",
+          "spring-boot"
+        ],
+        "springBootDeployment": "libertyProfile"
+      }
+    },
+    "multipleResources": {
+      "enabled": true,
+      "resources": [
+        {
+          "resourceName": "saeid",
+          "jsonFilePath": "{\"type\":\"object\",\"properties\":{\"customerId\":{\"type\":\"string\",\"format\":\"\"},\"customerName\":{\"type\":\"string\",\"format\":\"\"}},\"required\":[\"customerId\",\"customerName\"]}",
+          "isPublic": true,
+          "httpMethods": [
+            "get",
+            "put",
+            "post",
+            "patch",
+            "delete"
+          ],
+          "httpStatusCodes": [
+            "204",
+            "404",
+            "500"
+          ],
+          "requireTestDataType": "Test Data",
+          "apiFakerMappingFileProvided": true,
+          "apiFakerMappingFileLocation": {
+            "type": "object",
+            "properties": {
+              "customerId": {
+                "type": "string",
+                "faker": "random.number"
+              },
+              "customerName": {
+                "type": "string",
+                "faker": "name.findName"
+              }
+            },
+            "required": [
+              "customerId",
+              "customerName"
+            ]
+          },
+          "apiFakerMappingJsonType": "Data Schema",
+          "recordsLimit": "5",
+          "requireQuery": false,
+          "whichParameter": null,
+          "queryParameters": {
+            "get": [
+              {
+                "name": "revision",
+                "in": "header",
+                "description": "Needed Revision",
+                "required": true,
+                "type": "string",
+                "default": "R1"
+              }
+            ],
+            "put": [
+              {
+                "name": "revision",
+                "in": "header",
+                "description": "Needed Revision",
+                "required": true,
+                "type": "string",
+                "default": "R1"
+              }
+            ],
+            "post": [
+              {
+                "name": "revision",
+                "in": "header",
+                "description": "Needed Revision",
+                "required": true,
+                "type": "string",
+                "default": "R1"
+              }
+            ],
+            "patch": [
+              {
+                "name": "revision",
+                "in": "header",
+                "description": "Needed Revision",
+                "required": true,
+                "type": "string",
+                "default": "R1"
+              }
+            ],
+            "delete": [
+              {
+                "name": "revision",
+                "in": "header",
+                "description": "Needed Revision",
+                "required": true,
+                "type": "string",
+                "default": "R1"
+              }
+            ]
+          },
+          "uniqueParameter": "customerId",
+          "fake_data": null
+        }
+      ]
+    },
+    "caller_type": "ui",
+    "javaOptions": {
+      "basePackage": "saeid.com",
+      "packagingType": "war",
+      "dependencyManagementType": "maven",
+      "framework": [
+        "spring",
+        "spring-boot"
+      ],
+      "springBootDeployment": "libertyProfile"
+    },
+    "apiOverview": {
+      "apiName": "saeid",
+      "apiBasePath": "/api",
+      "apiDescription": "This is sample API being generated by cedrus-api generator"
+    },
+    "dataInput": {
+      "dataInputType": "JSON Input"
+    },
+    "JSONExtraction": [
+      {
+        "resourceName": "saeid",
+        "jsonFilePath": "{\"type\":\"object\",\"properties\":{\"customerId\":{\"type\":\"string\",\"format\":\"\"},\"customerName\":{\"type\":\"string\",\"format\":\"\"}},\"required\":[\"customerId\",\"customerName\"]}",
+        "isPublic": true,
+        "httpMethods": [
+          "get",
+          "put",
+          "post",
+          "patch",
+          "delete"
+        ],
+        "httpStatusCodes": [
+          "204",
+          "404",
+          "500"
+        ],
+        "requireTestDataType": "Test Data",
+        "apiFakerMappingFileProvided": true,
+        "apiFakerMappingFileLocation": {
+          "type": "object",
+          "properties": {
+            "customerId": {
+              "type": "string",
+              "faker": "random.number"
+            },
+            "customerName": {
+              "type": "string",
+              "faker": "name.findName"
+            }
+          },
+          "required": [
+            "customerId",
+            "customerName"
+          ]
+        },
+        "apiFakerMappingJsonType": "Data Schema",
+        "recordsLimit": "5",
+        "requireQuery": false,
+        "whichParameter": null,
+        "queryParameters": {
+          "get": [
+            {
+              "name": "revision",
+              "in": "header",
+              "description": "Needed Revision",
+              "required": true,
+              "type": "string",
+              "default": "R1"
+            }
+          ],
+          "put": [
+            {
+              "name": "revision",
+              "in": "header",
+              "description": "Needed Revision",
+              "required": true,
+              "type": "string",
+              "default": "R1"
+            }
+          ],
+          "post": [
+            {
+              "name": "revision",
+              "in": "header",
+              "description": "Needed Revision",
+              "required": true,
+              "type": "string",
+              "default": "R1"
+            }
+          ],
+          "patch": [
+            {
+              "name": "revision",
+              "in": "header",
+              "description": "Needed Revision",
+              "required": true,
+              "type": "string",
+              "default": "R1"
+            }
+          ],
+          "delete": [
+            {
+              "name": "revision",
+              "in": "header",
+              "description": "Needed Revision",
+              "required": true,
+              "type": "string",
+              "default": "R1"
+            }
+          ]
+        },
+        "uniqueParameter": "customerId",
+        "fake_data": null,
+        "jsonSchema": {
+          "type": "object",
+          "properties": {
+            "customerId": {
+              "type": "string",
+              "format": ""
+            },
+            "customerName": {
+              "type": "string",
+              "format": ""
+            }
+          },
+          "required": [
+            "customerId",
+            "customerName"
+          ]
+        }
+      }
+    ]
+  }
+}
