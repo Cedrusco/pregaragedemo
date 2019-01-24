@@ -1,0 +1,491 @@
+{
+  "generator-cedrus-api": {
+    "haveConfigFile": true,
+    "discover": {
+      "ask": false,
+      "apiConsumes": [
+        "application/json"
+      ],
+      "apiProduces": [
+        "application/json"
+      ]
+    },
+    "detail": {
+      "ask": false,
+      "isPublic": true,
+      "httpMethods": [
+        "get",
+        "put",
+        "post",
+        "patch",
+        "delete"
+      ],
+      "httpStatusCodes": [
+        "204",
+        "404",
+        "500"
+      ],
+      "versioning": {
+        "enabled": true,
+        "type": "uri",
+        "versionNumber": [
+          "v1"
+        ],
+        "uriOrder": "resourceFirst",
+        "contentTypeOrder": "applicationFirst",
+        "customHeaderName": "version"
+      },
+      "apiData": {
+        "returnDataType": "No"
+      },
+      "records": {
+        "limit": 10
+      },
+      "cache": {
+        "RedisEnable": false,
+        "RedisHost": "pub-redis-19334.dal-05.1.sl.garantiadata.com",
+        "RedisPort": "19334",
+        "RedisPassword": "zKvyYzznhsdvYwgq",
+        "RedisExpire": 180
+      },
+      "pagination": {
+        "PaginationEnable": true
+      },
+      "filter": {
+        "FilterEnable": false
+      },
+      "unitTesting": {
+        "UnitTestingEnable": true,
+        "testingTypes": [
+          "unitTesting",
+          "pactTesting"
+        ]
+      },
+      "security": {
+        "enabled": false,
+        "type": "none"
+      },
+      "logging": {
+        "enabled": false
+      }
+    },
+    "deploy": {
+      "ask": false,
+      "apiApplicationType": "nodejs",
+      "openWhisk": {
+        "OpenWhiskEnable": false
+      },
+      "tls": {
+        "TLSEnable": false
+      },
+      "cloudFoundry": {
+        "appName": "saeidNodejsapp",
+        "appMemory": "256M",
+        "revisionName": "R1"
+      },
+      "docker": {
+        "cwd": "TempSystem/cedrus23012019073503/pregaragedemo/saeidNodejs/R1",
+        "publicIP": "localhost",
+        "revisionName": "R1"
+      },
+      "javaOptions": {
+        "basePackage": "io.cedrus.apigen",
+        "packagingType": "war",
+        "dependencyManagementType": "maven",
+        "framework": [
+          "jaxrs",
+          "jaxrs"
+        ],
+        "springBootDeployment": null
+      }
+    },
+    "multipleResources": {
+      "enabled": true,
+      "resources": [
+        {
+          "resourceName": "saeidNodejsCustomer",
+          "jsonFilePath": "{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"number\",\"format\":\"double\"},\"firstName\":{\"type\":\"string\",\"format\":\"\"},\"lastName\":{\"type\":\"string\",\"format\":\"\"},\"age\":{\"type\":\"number\",\"format\":\"double\"},\"address\":{\"type\":\"object\",\"properties\":{\"streetAddress\":{\"type\":\"string\",\"format\":\"\"},\"city\":{\"type\":\"string\",\"format\":\"\"},\"state\":{\"type\":\"string\",\"format\":\"\"},\"postalCode\":{\"type\":\"string\",\"format\":\"\"}},\"required\":[\"streetAddress\",\"city\",\"state\",\"postalCode\"]},\"phoneNumber\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"type\":{\"type\":\"string\",\"format\":\"\"},\"number\":{\"type\":\"string\",\"format\":\"\"}},\"required\":[\"type\",\"number\"]}}},\"required\":[\"id\",\"firstName\",\"lastName\",\"age\",\"address\",\"phoneNumber\"]}",
+          "isPublic": true,
+          "httpMethods": [
+            "get",
+            "put",
+            "post",
+            "patch",
+            "delete"
+          ],
+          "httpStatusCodes": [
+            "204",
+            "404",
+            "500"
+          ],
+          "requireTestDataType": "Test Data",
+          "apiFakerMappingFileProvided": true,
+          "apiFakerMappingFileLocation": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "number"
+              },
+              "firstName": {
+                "type": "string"
+              },
+              "lastName": {
+                "type": "string"
+              },
+              "age": {
+                "type": "number"
+              },
+              "address": {
+                "type": "object",
+                "properties": {
+                  "streetAddress": {
+                    "type": "string"
+                  },
+                  "city": {
+                    "type": "string"
+                  },
+                  "state": {
+                    "type": "string"
+                  },
+                  "postalCode": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "streetAddress",
+                  "city",
+                  "state",
+                  "postalCode"
+                ]
+              },
+              "phoneNumber": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string"
+                    },
+                    "number": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "number"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "id",
+              "firstName",
+              "lastName",
+              "age",
+              "address",
+              "phoneNumber"
+            ]
+          },
+          "apiFakerMappingJsonType": "Data Schema",
+          "recordsLimit": "5",
+          "requireQuery": false,
+          "whichParameter": null,
+          "queryParameters": {
+            "get": [
+              {
+                "name": "revision",
+                "in": "header",
+                "description": "Needed Revision",
+                "required": true,
+                "type": "string",
+                "default": "R1"
+              }
+            ],
+            "put": [
+              {
+                "name": "revision",
+                "in": "header",
+                "description": "Needed Revision",
+                "required": true,
+                "type": "string",
+                "default": "R1"
+              }
+            ],
+            "post": [
+              {
+                "name": "revision",
+                "in": "header",
+                "description": "Needed Revision",
+                "required": true,
+                "type": "string",
+                "default": "R1"
+              }
+            ],
+            "patch": [
+              {
+                "name": "revision",
+                "in": "header",
+                "description": "Needed Revision",
+                "required": true,
+                "type": "string",
+                "default": "R1"
+              }
+            ],
+            "delete": [
+              {
+                "name": "revision",
+                "in": "header",
+                "description": "Needed Revision",
+                "required": true,
+                "type": "string",
+                "default": "R1"
+              }
+            ]
+          },
+          "uniqueParameter": "id",
+          "fake_data": null
+        }
+      ]
+    },
+    "caller_type": "ui",
+    "javaOptions": {
+      "basePackage": "io.cedrus.apigen",
+      "packagingType": "war",
+      "dependencyManagementType": "maven",
+      "framework": [
+        "jaxrs",
+        "jaxrs"
+      ],
+      "springBootDeployment": null
+    },
+    "apiOverview": {
+      "apiName": "saeidNodejs",
+      "apiBasePath": "/api",
+      "apiDescription": "This is sample API being generated by cedrus-api generator"
+    },
+    "dataInput": {
+      "dataInputType": "JSON Input"
+    },
+    "JSONExtraction": [
+      {
+        "resourceName": "saeidNodejsCustomer",
+        "jsonFilePath": "{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"number\",\"format\":\"double\"},\"firstName\":{\"type\":\"string\",\"format\":\"\"},\"lastName\":{\"type\":\"string\",\"format\":\"\"},\"age\":{\"type\":\"number\",\"format\":\"double\"},\"address\":{\"type\":\"object\",\"properties\":{\"streetAddress\":{\"type\":\"string\",\"format\":\"\"},\"city\":{\"type\":\"string\",\"format\":\"\"},\"state\":{\"type\":\"string\",\"format\":\"\"},\"postalCode\":{\"type\":\"string\",\"format\":\"\"}},\"required\":[\"streetAddress\",\"city\",\"state\",\"postalCode\"]},\"phoneNumber\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"type\":{\"type\":\"string\",\"format\":\"\"},\"number\":{\"type\":\"string\",\"format\":\"\"}},\"required\":[\"type\",\"number\"]}}},\"required\":[\"id\",\"firstName\",\"lastName\",\"age\",\"address\",\"phoneNumber\"]}",
+        "isPublic": true,
+        "httpMethods": [
+          "get",
+          "put",
+          "post",
+          "patch",
+          "delete"
+        ],
+        "httpStatusCodes": [
+          "204",
+          "404",
+          "500"
+        ],
+        "requireTestDataType": "Test Data",
+        "apiFakerMappingFileProvided": true,
+        "apiFakerMappingFileLocation": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "number"
+            },
+            "firstName": {
+              "type": "string"
+            },
+            "lastName": {
+              "type": "string"
+            },
+            "age": {
+              "type": "number"
+            },
+            "address": {
+              "type": "object",
+              "properties": {
+                "streetAddress": {
+                  "type": "string"
+                },
+                "city": {
+                  "type": "string"
+                },
+                "state": {
+                  "type": "string"
+                },
+                "postalCode": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "streetAddress",
+                "city",
+                "state",
+                "postalCode"
+              ]
+            },
+            "phoneNumber": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string"
+                  },
+                  "number": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "type",
+                  "number"
+                ]
+              }
+            }
+          },
+          "required": [
+            "id",
+            "firstName",
+            "lastName",
+            "age",
+            "address",
+            "phoneNumber"
+          ]
+        },
+        "apiFakerMappingJsonType": "Data Schema",
+        "recordsLimit": "5",
+        "requireQuery": false,
+        "whichParameter": null,
+        "queryParameters": {
+          "get": [
+            {
+              "name": "revision",
+              "in": "header",
+              "description": "Needed Revision",
+              "required": true,
+              "type": "string",
+              "default": "R1"
+            }
+          ],
+          "put": [
+            {
+              "name": "revision",
+              "in": "header",
+              "description": "Needed Revision",
+              "required": true,
+              "type": "string",
+              "default": "R1"
+            }
+          ],
+          "post": [
+            {
+              "name": "revision",
+              "in": "header",
+              "description": "Needed Revision",
+              "required": true,
+              "type": "string",
+              "default": "R1"
+            }
+          ],
+          "patch": [
+            {
+              "name": "revision",
+              "in": "header",
+              "description": "Needed Revision",
+              "required": true,
+              "type": "string",
+              "default": "R1"
+            }
+          ],
+          "delete": [
+            {
+              "name": "revision",
+              "in": "header",
+              "description": "Needed Revision",
+              "required": true,
+              "type": "string",
+              "default": "R1"
+            }
+          ]
+        },
+        "uniqueParameter": "id",
+        "fake_data": null,
+        "jsonSchema": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "number",
+              "format": "double"
+            },
+            "firstName": {
+              "type": "string",
+              "format": ""
+            },
+            "lastName": {
+              "type": "string",
+              "format": ""
+            },
+            "age": {
+              "type": "number",
+              "format": "double"
+            },
+            "address": {
+              "type": "object",
+              "properties": {
+                "streetAddress": {
+                  "type": "string",
+                  "format": ""
+                },
+                "city": {
+                  "type": "string",
+                  "format": ""
+                },
+                "state": {
+                  "type": "string",
+                  "format": ""
+                },
+                "postalCode": {
+                  "type": "string",
+                  "format": ""
+                }
+              },
+              "required": [
+                "streetAddress",
+                "city",
+                "state",
+                "postalCode"
+              ]
+            },
+            "phoneNumber": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "format": ""
+                  },
+                  "number": {
+                    "type": "string",
+                    "format": ""
+                  }
+                },
+                "required": [
+                  "type",
+                  "number"
+                ]
+              }
+            }
+          },
+          "required": [
+            "id",
+            "firstName",
+            "lastName",
+            "age",
+            "address",
+            "phoneNumber"
+          ]
+        }
+      }
+    ]
+  }
+}

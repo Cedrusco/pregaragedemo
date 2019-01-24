@@ -1,0 +1,5 @@
+---
+applications:
+- name: saeidNodejsapp
+  memory: 256M
+  command: node R1/index.js
